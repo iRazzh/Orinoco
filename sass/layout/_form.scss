@@ -49,7 +49,11 @@
 }
 
 @media screen and (min-width: $width-desk){
-    
+.products--allCards{
+        .products__cards{
+            width: 33%;
+        }
+    }    
 }
 
 
