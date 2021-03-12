@@ -24,7 +24,6 @@
         width: 100%;
         height: 260px;
         object-fit: cover;
-        box-shadow: 0 0 1rem black;
         border-radius: 10px;
         }
         h2{
@@ -34,6 +33,23 @@
     }
 }
 
+// MEDIA QUERIES
 
+// TABLET
+
+@media screen and (min-width: $width-tablet){
+.products--allCards{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        .products__cards{
+            width: 36%;
+        }
+    }
+}
+
+@media screen and (min-width: $width-desk){
+    
+}
 
 

@@ -26,3 +26,38 @@
 }
 
 
+// MEDIA QUERIES
+
+// TABLET
+
+@media screen and (min-width: $width-tablet){
+.header{
+    &__redirection{
+        img{
+            width: 80%;
+            }
+        }
+    }
+}
+
+
+// DESK 
+
+@media screen and (min-width: $width-desk){
+.header{
+    &__redirection{
+        img{
+            width: 40%;
+            }
+        }
+    &__paying{
+        .fa-shopping-cart{
+        font-size: 20px;
+        }
+        &--text{
+            font-size: 20px;
+            margin-left: 10px;
+            }
+        }
+    }
+}
