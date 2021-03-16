@@ -33,7 +33,7 @@ async function allFurnitures() {
     furnitures.forEach((furniture) => {
     
     // Création de l'élément de la carte de chaque produit sur l'HTML 
-    let furnitureSection = document.createElement("section"); // Section pour tout englober
+    let furnitureSection = document.createElement("div"); // div pour tout englober
     let furniturePhoto = document.createElement("div"); // Div pour la photo de la carte 
     let furnitureElement = document.createElement("div"); // Div pour les élements de la carte 
     let furnitureImage = document.createElement("img"); // Image de la div photo
@@ -62,7 +62,7 @@ async function allFurnitures() {
 
     // Contenu des balises ajoutées pour le nom, le prix, et le lien
     furnitureNom.textContent = furniture.name;
-    furniturePrix.textcontent = furniture.price / 100 +" €";
-    furnitureLien.textContent = "Voir/Modifier le produit";
+    furniturePrix.textContent = furniture.price / 50 + " €";
+    furnitureLien.textContent = "Commander ce produit";
     });
 }

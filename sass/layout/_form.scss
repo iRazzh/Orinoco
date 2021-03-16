@@ -3,35 +3,71 @@
     color: black;
 }
 .listFurnitures__title{
-        text-align: center;
-        margin: 2rem 0;
-        border: 1px solid black;
-        border-radius: 10px;
-        padding: 1rem;
+    text-align: center;
+    margin: 1rem;
+    border-radius: 10px;
+    padding: 1rem;
+    background: linear-gradient(
+        rgba(212, 128, 60),
+        rgba(191, 117, 119),
+        rgba(148, 94, 239));
+}
+.furniture--container{
+    margin: 2rem 1rem;
+    border: 1px solid grey;
+    border-radius: 10px;
+    box-shadow: 0 0 0.5rem black;
+    &:hover{
         background: linear-gradient(
-            rgba(212, 128, 60),
-            rgba(191, 117, 119),
-            rgba(148, 94, 239));
+        rgba(212, 128, 60),
+        rgba(191, 117, 119),
+        rgba(148, 94, 239));
     }
+    .furniture--photo{
+        width: auto;
+        padding: 1rem;
+        img{
+            width: 100%;
+            border: 1px solid grey;
+            border-radius: 10px;
+            height: 234px;
+            object-fit: cover;
+        }
+    }
+    .furniture--element{
+        padding: 0 1rem;
+        text-align: center;
+        .furniture--name,.furniture--price{
+            margin-bottom: 0.5rem;
+        }
+        a{
+            font-style: italic;
+            ;
+        }
+    }
+}
 
 // MEDIA QUERIES
 
 // TABLET
 
 @media screen and (min-width: $width-tablet){
-.furnitures--allCards{
+#listFurnitures{
         display: flex;
         flex-wrap: wrap;
         justify-content: space-evenly;
-        .furnitures__cards{
-            width: 36%;
+        h1{
+            width: 100%;
+        }
+        .furniture--container{
+            width: 35%;
         }
     }
 }
 
 @media screen and (min-width: $width-desk){
-.furnitures--allCards{
-        .furnitures__cards{
+#listFurnitures{
+        .furniture--container{
             width: 33%;
         }
     }    
