@@ -18,31 +18,25 @@
     border-radius: 10px;
     box-shadow: 0 0 0.5rem black;
     &:hover{
-        background: linear-gradient(
-        rgba(212, 128, 60),
-        rgba(191, 117, 119),
-        rgba(148, 94, 239));
-    }
-    .furniture--photo{
-        width: auto;
-        padding: 1rem;
-        img{
-            width: 100%;
-            border: 1px solid grey;
-            border-radius: 10px;
-            height: 234px;
-            object-fit: cover;
+        background-color: rgba(148, 94, 239);
         }
-    }
+    img{
+        width: 100%;
+        border-radius: 10px 10px 0 0;
+        height: 234px;
+        object-fit: cover;
+        }
     .furniture--element{
         padding: 0 1rem;
         text-align: center;
+        &:hover{
+            color: white;
+        }
         .furniture--name,.furniture--price{
             margin-bottom: 0.5rem;
         }
         a{
             font-style: italic;
-            ;
         }
     }
 }
@@ -68,7 +62,7 @@
 @media screen and (min-width: $width-desk){
 #listFurnitures{
         .furniture--container{
-            width: 33%;
+            width: 25%;
         }
     }    
 }
