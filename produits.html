@@ -21,8 +21,14 @@
             <div class="header__border"></div>
         </header>
 
-        <main id="main-product">
-            <!-- A compléter avec du JS -->
+        <main id="details">
+            <img id="details__photo" alt="Photo du produit sélectionné">
+            <section class="details__section">
+                <h3 id="details__section--name"></h3>
+                <p id="details__section--description"></p>
+                <p id="details__section--price"></p>
+                <label for="color">Consultez les vernis disponibles :</label><select id="vernishes"></select>
+            </section>
         </main>
     
         <footer>
@@ -36,5 +42,5 @@
 
         <!-- SCRIPT JS -->
         <script src="./js/products.js"></script>
-
+        <script>productsFurniture()</script>
     </body>

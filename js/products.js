@@ -15,10 +15,22 @@ let getAllFurnitures = function (){
         request.send();
     });
 };
-
-const queryString = window.location.search;
-console.log(queryString);
-const urlParams = new URLSearchParams(queryString);
-let idFurniture = urlParams.get('id')
-
 idFurniture= "";
+
+async function productsFurniture(){
+        const queryString = window.location.search
+        console.log(queryString)
+        const urlParams = new URLSearchParams(queryString)
+        idFurniture = urlParams.get("id")
+
+        const furnitures = await getAllFurnitures()
+
+        document.getElementById("details__photo")
+        .setAttribute("src", furnitures.imageUrl)
+        document.getElementById("details__section--name")
+        .innerHTML = furnitures.name
+        document.getElementById("details__section--description")
+        .innerHTML = furnitures.description
+        document.getElementById("details__section--price")
+        .innerHTML = "Prix : " + furnitures.price / 50 + "€"
+}

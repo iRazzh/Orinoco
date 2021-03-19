@@ -49,8 +49,8 @@ async function allFurnitures() {
     furnitureElement.appendChild(furnitureNom);     // l'éléement prend en compte le nom
     furnitureElement.appendChild(furniturePrix);    // l'élément prend en compte le prix
 
-    furnitureNom.textContent = furniture.name;
-    furniturePrix.textContent = furniture.price / 50 + " €";
+    furnitureNom.textContent = furniture.name;                  // Envoie le nom du produit
+    furniturePrix.textContent = furniture.price / 50 + " €";    // Envoie le prix du produit
     });
 }
 

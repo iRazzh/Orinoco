@@ -1,3 +1,5 @@
+// Homepage
+
 #listFurnitures a{
     text-decoration: none;
     color: black;
@@ -39,6 +41,38 @@
             font-style: italic;
         }
     }
+}
+
+// Products pages 
+
+#details{
+    margin: 2rem 1rem;
+    border: 1px solid grey;
+    border-radius: 10px;
+    box-shadow: 0 0 0.5rem black;
+    img{
+        width: 100%;
+        border-radius: 10px 10px 0 0;
+        height: 234px;
+        object-fit: cover;
+    }
+    .details__section{
+        padding: 1rem;
+    }
+    label{
+        font-size: 17px;
+    }
+}
+#details__section--name{
+    font-size: 21px;
+}
+#details__section--description{
+    margin: 1rem 0;
+    font-size: 17px;
+}
+#details__section--price{
+    margin: 1rem 0;
+    font-size: 17px;
 }
 
 // MEDIA QUERIES
