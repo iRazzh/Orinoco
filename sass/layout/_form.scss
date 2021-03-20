@@ -58,9 +58,23 @@
     }
     .details__section{
         padding: 1rem;
+        &--consulting{
+            font-size: 17px;
+        }
     }
-    label{
-        font-size: 17px;
+    .cart{
+        width: 100%;
+        margin-top: 1.5rem;
+        padding: 1rem;
+        font-weight: bold;
+        border-radius: 10px;
+        &:hover{
+        background: linear-gradient(
+        rgba(212, 128, 60),
+        rgba(191, 117, 119),
+        rgba(148, 94, 239));
+        color: white;
+        }
     }
 }
 #details__section--name{
@@ -106,12 +120,16 @@
 @media screen and (min-width: $width-laptop){
 //Products pages 
     #details{
-        width: 80%;
-        height: 310px;
+        width: 100%;
+        height: 325px;
         display: flex;
         img{
-            height: 310px;
+            height: 325px;
             border-radius: 10px;
+            width: 50%;
+        }
+        .cart{
+            margin-top: 2rem;
         }
     }
 }
@@ -124,11 +142,17 @@
     }  
 // Products pages
     #details{
-        width: 63%;
+        width: 80%;
         display: flex;
         height: 400px;
+        align-items: center;
+        margin-bottom: 12rem;
         img{
             height: 400px;
+            width: 50%;
+        }
+        .cart{
+            margin-top: 6rem;
         }
     }
 }
