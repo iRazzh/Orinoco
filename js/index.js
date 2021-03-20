@@ -24,7 +24,7 @@ async function allFurnitures() {
     let listFurnitures = document.getElementById("listFurnitures");
 
     /* Création des éléments HTML */
-    // Pour chaque élément de l'API, on lui crée un élément HTML 
+    // Pour chaque "furniture" de l'API, on lui crée un élément HTML 
     furnitures.forEach((furniture) => {
     
     let furnitureSection = document.createElement("div");   // div pour tout englober
