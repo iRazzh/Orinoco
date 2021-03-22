@@ -1,13 +1,24 @@
 /* Lien API */ 
 
 let getAllFurnitures = function (){
+    // Si l'ID ne vaut rien, ça return en null
+    if(idFurniture === "")
+    {
+        return null
+    }
     return new Promise((resolve) => {
         let request = new XMLHttpRequest();
         request.onreadystatechange = function() {
             if(this.readyState == XMLHttpRequest.DONE && this.status === 200){
-                resolve(JSON.parse(this.responseText));
                 console.log("Admin : OK !");
-            } else {
+                resolve(JSON.parse(this.responseText));
+            }
+            else if(this.status === 500 || this.status === 404)
+            {
+                console.log("Admin : ERROR product not found");
+                resolve(null)
+            }
+            else {
                 console.log("Admin : ERROR connection API failed");
             }
         };
@@ -15,6 +26,7 @@ let getAllFurnitures = function (){
         request.send();
     });
 };
+
 idFurniture= ""; // ID de chaque table
 
 // Création de la page produit
@@ -24,8 +36,14 @@ async function productsFurniture(){
         // Récupération de l'ID du produit situé dans l'URL 
         const urlParams = new URLSearchParams(queryString)
         idFurniture = urlParams.get("id")
-
+        
         const furnitures = await getAllFurnitures()
+        // Si furnitures est égal à null, on envoie une alerte avec une redirection
+        if(furnitures == null) 
+        {
+            alert("Un souci avec l'URL est survenue, vous allez être redirigé vers la page d'accueil.")
+            document.location.href = "index.html" // Redirection vers l'index
+        }
 
         document.getElementById("details__photo") // On récupère l'ID "details__photo",
         .setAttribute("src", furnitures.imageUrl) // et on lui attribut le src de l'image dans l'API
@@ -34,7 +52,7 @@ async function productsFurniture(){
         document.getElementById("details__section--description") // On récupère l'ID "details__section--description", 
         .innerHTML = furnitures.description // et on définit la syntaxe HTML situé dans l'API concernant la description
         document.getElementById("details__section--price") // On récupère l'ID "details__section--price", 
-        .innerHTML = "Prix : " + furnitures.price / 50 + "€" // et on définit la syntaxe HTML situé dans l'API concernant le prix
+        .innerHTML = "Prix : " + furnitures.price / 100 + "<b> €</b>" // et on définit la syntaxe HTML situé dans l'API concernant le prix
 
         // Pour chaque "furnitures" ayant "varnish", on lui crée un élément option HTML, on le met "enfant" de l'ID, et on définit sa syntaxe situé dans l'API
         furnitures.varnish.forEach((product) => { 
