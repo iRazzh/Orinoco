@@ -60,3 +60,33 @@ async function productsFurniture(){
             document.getElementById("varnish").appendChild(optionProduct).innerHTML = product;
         });
 };
+
+/* Création page panier */
+
+// Création localStorage
+
+if (localStorage.getItem("cart")) {
+
+} else {
+    let furnituresCart = []
+    localStorage.setItem("cart", JSON.stringify(furnituresCart));
+}
+
+// Panier de l'utilisateur 
+let furnituresCart = JSON.parse(localStorage.getItem("cart"))
+
+
+// Ajout de l'article au panier de l'utilisateur 
+if (document.getElementById('command') != null) {
+    const command = document.getElementById('command')
+
+    command.addEventListener('click', async function(){
+        console.log('Le bouton marche putain!')
+        const furnitures = await getAllFurnitures()
+
+        furnituresCart.push(furnitures)
+        localStorage.setItem("cart", JSON.stringify(furnituresCart))
+        console.log('Ajout au panier réussi')
+        console.log(furnituresCart + " sont dans le panier")
+    })
+}

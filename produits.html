@@ -16,7 +16,7 @@
             <div class="header__border"></div>
             <div class="header__paying">
                 <i class="fas fa-shopping-cart"></i>
-                <a href="#" class="header__paying--text">Panier</a>
+                <a href="cart.html" class="header__paying--text" >Panier</a>
             </div>
             <div class="header__border"></div>
         </header>
@@ -28,8 +28,21 @@
                 <p id="details__section--description"></p>
                 <p id="details__section--price"></p>
                 <p class="details__section--consulting">Consultez les vernis disponibles :</p>
-                <select id="varnish"></select>
-                <button class="cart">Commander !</button>
+                <select id="varnish"></select><br></br>
+                
+                <!--<label for="quantity">Quantité : </label> 
+                <select id="quantity" name="quantité">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                </select><!-->
+                <button id="command" class="cart">Commander !</button>
             </section>
         </main>
     
@@ -43,5 +56,5 @@
 
         <!-- SCRIPT JS -->
         <script src="./js/products.js"></script>
-        <script>productsFurniture()</script>
+        <script>productsFurniture()</script>   
     </body>
