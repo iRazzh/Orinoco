@@ -1,24 +1,28 @@
 // Création du panier
-    if (localStorage.getItem("cart") == undefined) {
-        // Le panier est un tableau de produits
-        localStorage.setItem("cart", JSON.stringify([]));
-};
-       
-let cart = {
-    add:(id) => {
-        // Récupération du localStorage
-        let furnituresCart = cart.read()
-        furnituresCart.push(id);
-        localStorage.setItem("cart", JSON.stringify(furnituresCart))
-        console.info('Validation de l\'ajout au panier')
-        console.info(furnituresCart + " sont présents dans le panier")
-    },
-    remove:() => {
-        alert("salut")
-    },
-    read:() => {
-        // Lecture du panier de l'utilisateur 
-        return JSON.parse(localStorage.getItem("cart"))
-    },
+
+// Si le localStorage ne récupère pas d'item "cart" et qu'il y a une valeur "undefined"
+if (localStorage.getItem("cart") == undefined) {
+  // On ajoute la valeur récupérée à l'emplacement de stockage sous forme de tableau
+  localStorage.setItem("cart", JSON.stringify([]));
 }
 
+// On crée une variable "cart" ayant pour propriété : 
+let cart = {
+    // "add" qui permet la récupération du localStorage
+  add: (id) => {
+    let furnituresCart = cart.read();
+    // On récupère le produit par son ID 
+    furnituresCart.push(id);
+    localStorage.setItem("cart", JSON.stringify(furnituresCart));
+    console.info("Validation de l'ajout au panier");
+    console.info(furnituresCart + " sont présents dans le panier");
+  }, 
+    // "remove" qui permettra dans le futur de supprimer l'article si on n'en veut plus 
+  remove: () => {
+    alert("salut");
+  },
+  // "read" qui permet de lire le panier de l'utilisateur
+  read: () => {
+    return JSON.parse(localStorage.getItem("cart"));
+  },
+};

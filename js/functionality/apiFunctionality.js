@@ -1,5 +1,21 @@
-// Lien API Produits
+// Lien API pour tous les produits API 
+let getAllFurnitures = function (){    
+    return new Promise((resolve) => {
+        let request = new XMLHttpRequest();
+        request.onreadystatechange = function() {
+            if(this.readyState == XMLHttpRequest.DONE && this.status === 200){
+                resolve(JSON.parse(this.responseText));
+                console.log("Admin : OK !");
+            } else {
+                console.log("Admin : ERROR connection API failed");
+            }
+        };
+        request.open("GET", "http://localhost:3000/api/furniture");
+        request.send();
+    });
+};
 
+// Lien API pour récupérer l'ID 
 let getOneFurniture = function (idFurniture){   
     return new Promise((resolve) => {
         let request = new XMLHttpRequest();
@@ -22,20 +38,3 @@ let getOneFurniture = function (idFurniture){
     });
 };
 
-// Lien API tous les produits API 
-
-let getAllFurnitures = function (){
-    return new Promise((resolve) => {
-        let request = new XMLHttpRequest();
-        request.onreadystatechange = function() {
-            if(this.readyState == XMLHttpRequest.DONE && this.status === 200){
-                resolve(JSON.parse(this.responseText));
-                console.log("Admin : OK !");
-            } else {
-                console.log("Admin : ERROR connection API failed");
-            }
-        };
-        request.open("GET", "http://localhost:3000/api/furniture");
-        request.send();
-    });
-};

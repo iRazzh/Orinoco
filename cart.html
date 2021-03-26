@@ -1,47 +1,49 @@
 <!DOCTYPE html>
 <html lang="fr">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- ViewPort -->
-        <link rel="stylesheet" href="./css/style.css">
-        <title>Orinoco</title> <!-- Titre de la page -->
-        <script src="https://kit.fontawesome.com/fe36517717.js" crossorigin="anonymous"></script> <!-- Font Awesome -->
-    </head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />     <!-- ViewPort -->
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Orinoco</title>     <!-- Titre de la page -->
+    <script
+      src="https://kit.fontawesome.com/fe36517717.js"
+      crossorigin="anonymous"
+    ></script>    <!-- Font Awesome -->
+  </head>
 
-    <body>
-        <header class="header container">
-            <a href="index.html" class="header__redirection">
-                <img src="./images/logo.png" alt="Logo d'Orinoco">
-            </a>
-            <div class="header__border"></div>
-            <div class="header__paying">
-                <i class="fas fa-shopping-cart"></i>
-                <a href="cart.html" class="header__paying--text" >Panier</a>
-            </div>
-            <div class="header__border"></div>
+  <body>
+    <header class="header container">
+      <a href="index.html" class="header__redirection">
+        <img src="./images/logo.png" alt="Logo d'Orinoco" />
+      </a>
+      <div class="header__border"></div>
+      <div class="header__paying">
+        <i class="fas fa-shopping-cart"></i>
+        <a href="cart.html" class="header__paying--text">Panier</a>
+      </div>
+      <div class="header__border"></div>
+    </header>
 
-        </header>
-            
-        <main class="cart">
-            <section id="cart-resume">
-                <h3>Votre panier :</h3>
-                <p id="emptyCart">Votre panier est vide</p>
-                <div id="productCart">
-                </div>
-            </section>
-        </main>
+    <main class="cart">
+      <section id="cart-resume">
+        <h3>Votre panier :</h3>
+        <p id="emptyCart">Votre panier est vide</p>
+        <div id="productCart"></div>
+      </section>
+    </main>
 
-        <footer>
-            <div class="footer">
-                <p class="footer__contact">
-                    <i class="fas fa-file-signature"></i>
-                    <a href="mailto:?to=email@example.com">Contactez-nous !</a></p>
-            </div>
-        </footer>
+    <footer>
+      <div class="footer">
+        <p class="footer__contact">
+          <i class="fas fa-file-signature"></i>
+          <a href="mailto:?to=email@example.com">Contactez-nous !</a>
+        </p>
+      </div>
+    </footer>
 
-        <!-- SCRIPT JS -->
-        <script src="./js/functionality/cartFunctionality.js"></script>
-        <script src="./js/functionality/apiFunctionality.js"></script>
-        <script src="./js/cart.js"></script>
-    </body>
+    <!-- SCRIPT JS -->
+    <script src="./js/functionality/cartFunctionality.js"></script>
+    <script src="./js/functionality/apiFunctionality.js"></script>
+    <script src="./js/cart.js"></script>
+  </body>
 </html>

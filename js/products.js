@@ -1,4 +1,4 @@
-// Création de la page produit
+/* Création de la page produit */
 
 const queryString = window.location.search;
 console.log(queryString);
@@ -6,15 +6,18 @@ console.log(queryString);
 const urlParams = new URLSearchParams(queryString);
 idFromUrl = urlParams.get("id");
 
-function handler(furniture){
-    // Si furniture est égal à null, on envoie une alerte avec une redirection
-if (furniture == null) {
+// On attribut à la fonction "handler", le paramètre "furniture"
+// la fonction "handler" va permettre de traiter les données de l'API
+// le paramètre "furniture" stocke les données de l'API 
+function handler(furniture) {
+  // Si furniture est égal à null, on envoie une alerte avec une redirection
+  if (furniture == null) {
     alert(
       "Un souci avec l'URL est survenue, vous allez être redirigé vers la page d'accueil."
     );
     document.location.href = "index.html"; // Redirection vers l'index
   }
-  
+
   document
     .getElementById("details__photo") // On récupère l'ID "details__photo",
     .setAttribute("src", furniture.imageUrl); // et on lui attribut le src de l'image dans l'API
@@ -23,7 +26,7 @@ if (furniture == null) {
     furniture.description; // et on définit la syntaxe HTML situé dans l'API concernant la description
   document.getElementById("details__section--price").innerHTML = // On récupère l'ID "details__section--price",
     "Prix : " + furniture.price / 100 + "<b> €</b>"; // et on définit la syntaxe HTML situé dans l'API concernant le prix
-  
+
   // Pour chaque "furniture" ayant "varnish", on lui crée un élément option HTML, on le met "enfant" de l'ID, et on définit sa syntaxe situé dans l'API
   furniture.varnish.forEach((product) => {
     let optionProduct = document.createElement("option");
@@ -33,13 +36,15 @@ if (furniture == null) {
   });
 }
 
+/* Panier */
+
+// On appelle l'API ayant le produit stocké grâce à son ID, on lui envoie un objet Promise ".then"
+// et elle nous renvoie une réponse "handler" qui permet de traiter les données de l'API
 getOneFurniture(idFromUrl).then(handler);
 
-
 /* Ajout de l'article au panier */
-// Au click du client, on met le produit dans le panier
 
-document.getElementById("command").addEventListener("click", function() {
-    cart.add(idFromUrl)
-})
-
+// Au click, on ajoute l'ID du produit dans le panier
+document.getElementById("command").addEventListener("click", function () {
+  cart.add(idFromUrl);
+});
