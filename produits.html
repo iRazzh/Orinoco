@@ -22,26 +22,13 @@
         </header>
 
         <main id="details">
-            <img id="details__photo" src="images/img.png" Photo du produit sélectionné">
+            <img id="details__photo" src="images/img.png">
             <section class="details__section">
                 <h3 id="details__section--name">Table</h3>
                 <p id="details__section--description"></p>
                 <p id="details__section--price"></p>
                 <p class="details__section--consulting">Consultez les vernis disponibles :</p>
                 <select id="varnish"></select><br></br>
-                
-                <!--<label for="quantity">Quantité : </label> 
-                <select id="quantity" name="quantité">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                </select><!-->
                 <button id="command" class="cart">Commander !</button>
             </section>
         </main>
@@ -55,6 +42,8 @@
         </footer>
 
         <!-- SCRIPT JS -->
-        <script src="./js/products.js"></script>
-        <script>productsFurniture()</script>   
+        <script src="./js/functionality/apiFunctionality.js"></script>
+        <script src="./js/functionality/cartFunctionality.js"></script>
+        <script src="./js/products.js"></script> 
     </body>
+</html>
