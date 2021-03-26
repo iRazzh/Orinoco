@@ -4,6 +4,7 @@ let struct = `<div class="produit">
 <img class="img">
 <h2 class="name">Coucou</h2>
 <p class="prix"></p>
+<button class="removeBtn">
 </div>`;
 
 // On attribut à la fonction "handler", le paramètre "furniture"
@@ -13,11 +14,12 @@ function handler(furniture) {
   // Pour chaque "furniture", on analyse le code source HTML grâce au "DOMParser"
   // et on le transforme en élément manipulable du DOM
   html = new DOMParser().parseFromString(struct, "text/html");
-  html.body.getElementsByClassName("name")[0].innerHTML = furniture.name; // On remplace par le nom
-  html.body.getElementsByClassName("prix")[0].innerHTML = furniture.price; // On remplace par le prix
   html.body
     .getElementsByClassName("img")[0]
-    .setAttribute("src", furniture.imageUrl); // On remplace par l'image
+    .setAttribute("src", furniture.imageUrl); // On ajoute l'image
+  html.body.getElementsByClassName("name")[0].innerHTML = furniture.name; // On remplace par le nom
+  html.body.getElementsByClassName("prix")[0].innerHTML = furniture.price / 100 + " €"; // On remplace par le prix
+  html.body.getElementsByClassName("removeBtn")[0].innerHTML = "Supprimer ce produit ?";
   // On insère tous les éléments avant la fin de l'ID "productCart" qu'on a récupéré
   document
     .getElementById("productCart")

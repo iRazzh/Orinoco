@@ -47,4 +47,5 @@ getOneFurniture(idFromUrl).then(handler);
 // Au click, on ajoute l'ID du produit dans le panier
 document.getElementById("command").addEventListener("click", function () {
   cart.add(idFromUrl);
+  alert("Vous venez d'ajouter ce produit dans votre panier")
 });
