@@ -1,3 +1,7 @@
+/* Page Index */
+
+//===============================================
+
 // On crée la structure HTML grâce à << ` ` >> 
 // qui définit une chaîne de caractère et permet d'intégrer des expressions 
 let struct = `
@@ -36,6 +40,10 @@ function handler(furnitures) {
   });
 }
 
+//===============================================
+
 // On appelle l'API contenant TOUS les produits, on lui envoie un objet Promise ".then"
 // et elle nous renvoie une réponse "handler" qui permet de traiter les données de l'API
 getAllFurnitures().then(handler);
+
+//===============================================

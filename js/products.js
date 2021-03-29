@@ -1,10 +1,14 @@
 /* Création de la page produit */
 
+//===============================================
+
 const queryString = window.location.search;
 console.log(queryString);
 // Récupération de l'ID du produit situé dans l'URL
 const urlParams = new URLSearchParams(queryString);
 idFromUrl = urlParams.get("id");
+
+//===============================================
 
 // On attribut à la fonction "handler", le paramètre "furniture"
 // la fonction "handler" va permettre de traiter les données de l'API
@@ -36,6 +40,8 @@ function handler(furniture) {
   });
 }
 
+//===============================================
+
 /* Panier */
 
 // On appelle l'API ayant le produit stocké grâce à son ID, on lui envoie un objet Promise ".then"
@@ -49,3 +55,5 @@ document.getElementById("command").addEventListener("click", function () {
   cart.add(idFromUrl);
   alert("Vous venez d'ajouter ce produit dans votre panier")
 });
+
+//===============================================

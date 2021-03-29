@@ -6,6 +6,8 @@ if (localStorage.getItem("cart") == undefined) {
   localStorage.setItem("cart", JSON.stringify([]));
 }
 
+//===============================================
+
 // On crée une variable "cart" ayant pour propriété : 
 let cart = {
     // "add" qui permet la récupération du localStorage
@@ -17,12 +19,10 @@ let cart = {
     console.info("Validation de l'ajout au panier");
     console.info(furnituresCart + " sont présents dans le panier");
   }, 
-    // "remove" qui permettra dans le futur de supprimer l'article si on n'en veut plus 
-  remove: () => {
-    alert("salut");
-  },
   // "read" qui permet de lire le panier de l'utilisateur
   read: () => {
     return JSON.parse(localStorage.getItem("cart"));
   },
 };
+
+//===============================================
