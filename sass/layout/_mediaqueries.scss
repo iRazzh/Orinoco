@@ -1,5 +1,7 @@
 // MEDIA QUERIES
 
+//===============================================
+
 // TABLET
 @media screen and (min-width: $width-tablet) {
   //Homepage
@@ -23,7 +25,17 @@
       text-align: center;
     }
   }
+//Cart page
+  #productCart {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    .produit{
+      width: 45%;
+    }
+  }
 }
+//===============================================
 
 // LAPTOP
 @media screen and (min-width: $width-laptop) {
@@ -42,6 +54,8 @@
     }
   }
 }
+
+//===============================================
 
 // DESK
 @media screen and (min-width: $width-desk) {
@@ -64,6 +78,12 @@
     }
     .cart {
       margin-top: 6rem;
+    }
+  }
+  // Cart page
+  #productCart{
+    .produit{
+      width: 35%;
     }
   }
 }
