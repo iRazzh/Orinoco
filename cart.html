@@ -25,11 +25,51 @@
     </header>
 
     <main class="cart">
+
       <section id="cart-resume">
         <p id="emptyCart">Votre panier est vide</p>
         <div id="productCart"></div>
         <p id="total"></p>
         <button id="removeCart">Vider le panier</button>
+        <h3 class="formT">Merci de remplir le formulaire avant de valider la commande!</h3>
+      </section>
+
+      <section class="form">
+
+        <form id="inscription">
+          <fieldset>
+            <legend>Identité :</legend>
+              <div class="allForm">
+                <label for="lastName">Nom : </label>
+                <input type="text" id="lastName" class="info" required placeholder="Lemaître" name="lastName">
+              </div>
+              
+              <div class="allForm">
+                <label for="firstName" class="right-inline">Prénom :</label>
+                <input type="text" id="firstName" class="info" required placeholder="Jean" name="firstName">
+              </div>
+
+              <div class="allForm">
+                <label for="email">E-mail :</label>
+                <input type="email" id="email" class="info" required placeholder="jean.lemaitre@hotmail.com" name="email">
+              </div>
+          </fieldset> 
+
+          <fieldset>
+            <legend>Adresse de livraison :</legend>
+            <div class="allForm">
+              <label for="address">Adresse :</label>
+              <input type="text" id="address" class="info" required placeholder="2 rue du concorde" name="address">
+            </div>
+            
+            <div class="allForm">
+              <label for="city">Ville :</label>
+              <input type="text" id="city" class="info" required placeholder="Paris" name="city">
+            </div>
+          </fieldset> 
+          <input type="submit" value="Valider la commande!">
+        </form>
+        <p style="color: brown;" id="error"></p>
       </section>
     </main>
 

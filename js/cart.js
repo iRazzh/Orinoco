@@ -73,3 +73,93 @@ remove.onclick = function () {
 };
 
 //===============================================
+
+/* Formulaire */
+
+document.getElementById("inscription").addEventListener("submit", function(element){
+  let erreur;
+
+  const regexLetters = /[A-Za-z]/;
+  const regexNumber = /[0-9]/;
+  const regexMail = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+  const regexSpecialsCharacters = /[§!@#$%^&*().?":{}|<>]/;
+
+  let lastName = document.getElementById("lastName");
+  let firstName = document.getElementById("firstName");
+  let email = document.getElementById("email");
+  let address = document.getElementById("address");
+  let city = document.getElementById("city");
+
+  if(regexNumber.test(lastName.value) == true || regexSpecialsCharacters.test(lastName.value) == true){
+    erreur = "Veuillez renseignez un nom valide."
+  } else {
+    console.info("Nom valide")
+  }
+  if(regexNumber.test(firstName.value) == true || regexSpecialsCharacters.test(firstName.value) == true){
+    erreur = "Veuillez renseignez un prénom valide."
+  } else {
+    console.info("Prénom valide")
+  }
+  if(regexMail.test(email.value) == false){
+    erreur = "Veuillez renseignez un email valide."
+  } else {
+    console.info("Email valide")
+  }
+  if((regexNumber.test(address.value) == false && regexLetters.test(address.value) == true) || (regexNumber.test(address.value) == true && regexLetters.test(address.value) == false) || regexSpecialsCharacters.test(address.value) == true){
+    erreur = "Veuillez renseignez une adresse valide."
+  } else {
+    console.info("Adresse valide")
+  }
+  if(regexNumber.test(city.value) == true || regexSpecialsCharacters.test(city.value) == true){
+    erreur = "Veuillez renseignez une ville valide."
+  } else {
+    console.info("Ville valide")
+  }
+  if (erreur) {
+    element.preventDefault();
+    document.getElementById("error").innerHTML = erreur;
+    return false
+  } else {
+    alert("Formulaire envoyé!")
+  }
+})
+
+
+
+
+
+
+/*
+
+// Vérification des différents input dans le formulaire
+// Vérification : lastName 
+  if( regexNumber.test(lastName) == false || regexSpecialsCharacters.test(lastName) == false || lastName ==""){
+    console.info('Admin : Le nom est correct')
+  }
+  // Vérification : firstName
+  if(regexNumber.test(firstName) == true || regexSpecialsCharacters.test(firstName) == true && value.length < 2){
+
+  } else {
+    console.info('Admin : Le prénom est correct')
+  }
+  // Vérification : email 
+  if(regexMail.test(email) == false && regexSpecialsCharacters.test(email) == true){
+
+  } else {
+    console.info('Admin : L\'email est correct')
+  }
+  // Vérification : address 
+  if(regexSpecialsCharacters.test(address) == true || regexNumber.test(address) == false){
+
+  } else {
+    console.info('Admin : L\'adresse postale est correcte')
+  }
+  // Vérification : city
+  if(regexNumber.test(city) == true || regexSpecialsCharacters.test(city) == true && value.length < 1){
+
+  } else {
+    console.info('Admin : La ville est correcte')
+  }
+}*/
+
+
