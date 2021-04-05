@@ -76,90 +76,90 @@ remove.onclick = function () {
 
 /* Formulaire */
 
+let contact;
+
+let objet = {}
+
 document.getElementById("inscription").addEventListener("submit", function(element){
-  let erreur;
+  // Création des différents regex
+const regexLetters = /[A-Za-z]/;
+const regexNumber = /[0-9]/;
+const regexMail = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+const regexSpecialsCharacters = /[§!@#$%^&*().?":{}|<>]/;
 
-  const regexLetters = /[A-Za-z]/;
-  const regexNumber = /[0-9]/;
-  const regexMail = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
-  const regexSpecialsCharacters = /[§!@#$%^&*().?":{}|<>]/;
+// Récupération de chaque ID du formulaire
+let lastName = document.getElementById("lastName");
+let firstName = document.getElementById("firstName");
+let email = document.getElementById("email");
+let address = document.getElementById("address");
+let city = document.getElementById("city");
 
-  let lastName = document.getElementById("lastName");
-  let firstName = document.getElementById("firstName");
-  let email = document.getElementById("email");
-  let address = document.getElementById("address");
-  let city = document.getElementById("city");
+// Création d'une variable "erreur" pour la gestion et l'affichage des erreurs
+let erreur;
 
-  if(regexNumber.test(lastName.value) == true || regexSpecialsCharacters.test(lastName.value) == true){
-    erreur = "Veuillez renseignez un nom valide."
+// Vérification : nom
+  if (
+    regexNumber.test(lastName.value) == true ||
+    regexSpecialsCharacters.test(lastName.value) == true) {
+    erreur = "Veuillez renseignez un nom valide.";
   } else {
-    console.info("Nom valide")
+    console.info("Nom valide");
   }
-  if(regexNumber.test(firstName.value) == true || regexSpecialsCharacters.test(firstName.value) == true){
-    erreur = "Veuillez renseignez un prénom valide."
+  // Vérification : prénom
+  if (
+    regexNumber.test(firstName.value) == true ||
+    regexSpecialsCharacters.test(firstName.value) == true) {
+    erreur = "Veuillez renseignez un prénom valide.";
   } else {
-    console.info("Prénom valide")
+    console.info("Prénom valide");
   }
-  if(regexMail.test(email.value) == false){
-    erreur = "Veuillez renseignez un email valide."
+  // Vérification : email
+  if (regexMail.test(email.value) == false) {
+    erreur = "Veuillez renseignez un email valide.";
   } else {
-    console.info("Email valide")
+    console.info("Email valide");
   }
-  if((regexNumber.test(address.value) == false && regexLetters.test(address.value) == true) || (regexNumber.test(address.value) == true && regexLetters.test(address.value) == false) || regexSpecialsCharacters.test(address.value) == true){
-    erreur = "Veuillez renseignez une adresse valide."
+  // Vérification : adresse
+  if (
+    (regexNumber.test(address.value) == false &&
+      regexLetters.test(address.value) == true) ||
+    (regexNumber.test(address.value) == true &&
+      regexLetters.test(address.value) == false) ||
+    regexSpecialsCharacters.test(address.value) == true) {
+    erreur = "Veuillez renseignez une adresse valide.";
   } else {
-    console.info("Adresse valide")
+    console.info("Adresse valide");
   }
-  if(regexNumber.test(city.value) == true || regexSpecialsCharacters.test(city.value) == true){
-    erreur = "Veuillez renseignez une ville valide."
+  // Vérification : ville
+  if (
+    regexNumber.test(city.value) == true ||
+    regexSpecialsCharacters.test(city.value) == true) {
+    erreur = "Veuillez renseignez une ville valide.";
   } else {
-    console.info("Ville valide")
+    console.info("Ville valide");
   }
+  // Mise en place de l'erreur
+  element.preventDefault();
   if (erreur) {
-    element.preventDefault();
     document.getElementById("error").innerHTML = erreur;
-    return false
+    return false;
   } else {
-    alert("Formulaire envoyé!")
-  }
-})
-
-
-
-
-
-
-/*
-
-// Vérification des différents input dans le formulaire
-// Vérification : lastName 
-  if( regexNumber.test(lastName) == false || regexSpecialsCharacters.test(lastName) == false || lastName ==""){
-    console.info('Admin : Le nom est correct')
-  }
-  // Vérification : firstName
-  if(regexNumber.test(firstName) == true || regexSpecialsCharacters.test(firstName) == true && value.length < 2){
-
-  } else {
-    console.info('Admin : Le prénom est correct')
-  }
-  // Vérification : email 
-  if(regexMail.test(email) == false && regexSpecialsCharacters.test(email) == true){
-
-  } else {
-    console.info('Admin : L\'email est correct')
-  }
-  // Vérification : address 
-  if(regexSpecialsCharacters.test(address) == true || regexNumber.test(address) == false){
-
-  } else {
-    console.info('Admin : L\'adresse postale est correcte')
-  }
-  // Vérification : city
-  if(regexNumber.test(city) == true || regexSpecialsCharacters.test(city) == true && value.length < 1){
-
-  } else {
-    console.info('Admin : La ville est correcte')
-  }
-}*/
-
+    contact = {
+      firstName : firstName,
+      lastName : lastName,
+      address : address,
+      city : city,
+      email : email,
+    };
+    objet = {
+      contact: contact,
+      products: products,
+    };
+    let envoi = JSON.stringify(objet);
+    let commande = sendForm(envoi).then((response) => {
+      console.log(response)
+      alert("Formulaire envoyé!");
+    });
+  };
+});
 

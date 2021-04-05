@@ -38,3 +38,18 @@ let getOneFurniture = function (idFurniture){
     });
 };
 
+// Lien API pour l'envoie du formulaire 
+let sendForm = function(object){
+    return new Promise((resolve) => {
+        let request = new XMLHttpRequest(); 
+        request.onreadystatechange = function(){
+            if(this.readyState == XMLHttpRequest.DONE && this.status === 201){
+                sessionStorage.setItem("order", this.responseText)
+                resolve(JSON.parse(this.responseText));
+            } 
+        };
+        request.open("POST", "http://localhost:3000/api/furniture" + "/" + "order");
+        request.setRequestHeader("Content-Type", "application/json");
+        request.send(object);
+    })
+}
