@@ -145,11 +145,11 @@ let erreur;
     return false;
   } else {
     contact = {
-      firstName : firstName,
-      lastName : lastName,
-      address : address,
-      city : city,
-      email : email,
+      firstName : firstName.value,
+      lastName : lastName.value,
+      address : address.value,
+      city : city.value,
+      email : email.value,
     };
     objet = {
       contact: contact,
@@ -160,6 +160,7 @@ let erreur;
       console.log(response)
       alert("Formulaire envoyé!");
     });
+    localStorage.clear()
   };
 });
 

@@ -45,6 +45,7 @@ let sendForm = function(object){
         request.onreadystatechange = function(){
             if(this.readyState == XMLHttpRequest.DONE && this.status === 201){
                 sessionStorage.setItem("order", this.responseText)
+                window.location = 'confirm.html';
                 resolve(JSON.parse(this.responseText));
             } 
         };
