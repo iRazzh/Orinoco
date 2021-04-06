@@ -4,7 +4,7 @@
 
 // TABLET
 @media screen and (min-width: $width-tablet) {
-  //Homepage
+  // Homepage
   #listFurnitures {
     display: flex;
     flex-wrap: wrap;
@@ -16,7 +16,7 @@
       width: 35%;
     }
   }
-  //Products pages
+  // Page : Products
   #details {
     width: 70%;
     margin-left: auto;
@@ -25,7 +25,7 @@
       text-align: center;
     }
   }
-//Cart page
+// Page : Cart
   #productCart {
     display: flex;
     flex-wrap: wrap;
@@ -39,7 +39,7 @@
 
 // LAPTOP
 @media screen and (min-width: $width-laptop) {
-  //Products pages
+  // Page : Products
   #details {
     width: 95%;
     height: 325px;
@@ -59,13 +59,13 @@
 
 // DESK
 @media screen and (min-width: $width-desk) {
-  //Homepage
+  // Homepage
   #listFurnitures {
     .furniture--container {
       width: 25%;
     }
   }
-  // Products pages
+  // Page : Products
   #details {
     width: 80%;
     display: flex;
@@ -80,10 +80,22 @@
       margin-top: 6rem;
     }
   }
-  // Cart page
+  // Page : Cart
   #productCart{
     .produit{
       width: 26%;
+    }
+  }
+
+  // Page : Confirm 
+  .order{
+    &--info{
+      .orderId, .address, .mail, .identity{
+        width: 25%;
+      }
+      .price{
+        margin-bottom: 3rem;
+      }
     }
   }
 }

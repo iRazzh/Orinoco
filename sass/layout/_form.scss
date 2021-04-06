@@ -164,3 +164,47 @@
     margin-bottom: 1rem;
   }
 }
+
+//===============================================
+
+// Page : Confirm
+
+.order{
+  text-align: center;
+  &--title{
+    margin: 2rem 0;
+  }
+  .fa-check{
+    border: 1px solid black;
+    border-radius: 50%;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    background: linear-gradient(
+        rgba(212, 128, 60),
+        rgba(191, 117, 119),
+        rgba(148, 94, 239)
+      );
+    font-size: 20px;
+    animation: check 1s infinite;
+  }
+  &--info{
+    .number, .price, .delivery, .name{
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+    .orderId, .address, .mail, .identity{
+      border: 1px solid black;
+      width: 50%;
+      margin-bottom: 2rem;
+      padding: 10px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .price{
+      margin-bottom: 2rem;
+    }
+    .info{
+      margin-bottom: 1rem;
+    }
+  }
+}
