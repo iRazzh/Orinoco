@@ -1,16 +1,30 @@
 .footer{
     padding: 1rem 0;
-    background-color: black;
+    background: linear-gradient(
+        rgba(212, 128, 60),
+        rgba(191, 117, 119),
+        rgba(148, 94, 239)
+      );
     &__contact{
-        margin-left: 1rem;
-        font-size: 20px;
-        text-align: center;
+        margin-left: 2rem;
+        font-size: 19px;
+        font-style: oblique;
+        font-weight: bold;
         a{
             text-decoration: none;
-            color: white;
+            color: black;
+            width: 100%;
         }
-        i{
-            color: white;
+        .icon{
+            color: black;
+            margin: 5px 0;
+            i{
+                margin: 8px;
+            }
+        }
+        p{
+            color: black;
+            margin: 10px 0;
         }
     }
 }
