@@ -12,7 +12,7 @@ idFromUrl = urlParams.get("id");
 
 // On attribut à la fonction "handler", le paramètre "furniture"
 // la fonction "handler" va permettre de traiter les données de l'API
-// le paramètre "furniture" stocke les données de l'API 
+// le paramètre "furniture" stocke les données de l'API
 function handler(furniture) {
   // Si furniture est égal à null, on envoie une alerte avec une redirection
   if (furniture == null) {
@@ -53,7 +53,7 @@ getOneFurniture(idFromUrl).then(handler);
 // Au click, on ajoute l'ID du produit dans le panier
 document.getElementById("command").addEventListener("click", function () {
   cart.add(idFromUrl);
-  alert("Vous venez d'ajouter ce produit dans votre panier")
+  alert("Vous venez d'ajouter ce produit dans votre panier");
 });
 
 //===============================================

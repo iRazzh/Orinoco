@@ -9,22 +9,28 @@ if (sessionStorage.getItem("order") != null) {
   // On récupère l'ID et on remplace le texte avec l'orderId
   document.getElementsByClassName("orderId")[0].innerHTML = confirm.orderId;
   document.getElementsByClassName("mail")[0].innerHTML = confirm.contact.email;
-  document.getElementsByClassName("address")[0].innerHTML = confirm.contact.address + " " + confirm.contact.city;
-  document.getElementsByClassName("identity")[0].innerHTML = confirm.contact.lastName + " " + confirm.contact.firstName;
+  document.getElementsByClassName("address")[0].innerHTML =
+    confirm.contact.address + " " + confirm.contact.city;
+  document.getElementsByClassName("identity")[0].innerHTML =
+    confirm.contact.lastName + " " + confirm.contact.firstName;
   // On crée une variable "somme" à 0 pour le calcul du prix total
   let somme = 0;
   // Pour chaque "article" dans "products" dans le sessionStorage, on l'additionne
   confirm.products.forEach((article) => {
     somme += article.price / 100;
-    console.log(somme)
+    console.log(somme);
     // On affiche le total de la somme
-    document.getElementsByClassName("price")[0].textContent = "Prix total : " + somme + "€";
-  })
+    document.getElementsByClassName("price")[0].textContent =
+      "Prix total : " + somme + "€";
+  });
+  // Une fois avoir récup les valeurs, on clear le sessionStorage pour le remettre à 0
   sessionStorage.clear();
 } else {
   // S'il y a un souci, on envoie une alerte et on redirige le client sur la page d'accueil
-  alert("Un problème est survenu, vous allez être redirigé automatiquement vers la page d'accueil.");
-  window.location = 'index.html';
+  alert(
+    "Un problème est survenu, vous allez être redirigé automatiquement vers la page d'accueil."
+  );
+  window.location = "index.html";
 }
 
 //===============================================
