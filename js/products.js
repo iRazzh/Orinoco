@@ -15,7 +15,7 @@ idFromUrl = urlParams.get("id");
 // le paramètre "furniture" stocke les données de l'API
 function handler(furniture) {
   // Si furniture est égal à null, on envoie une alerte avec une redirection
-  if (furniture == null) {
+  if (furniture == null || undefined) {
     alert(
       "Un souci avec l'URL est survenue, vous allez être redirigé vers la page d'accueil."
     );
@@ -25,7 +25,8 @@ function handler(furniture) {
   document
     .getElementById("details__photo") // On récupère l'ID "details__photo",
     .setAttribute("src", furniture.imageUrl); // et on lui attribut le src de l'image dans l'API
-  document.getElementById("details__section--name").innerHTML = furniture.name; // On récupère l'ID "details__section--name", // et on définit la syntaxe HTML situé dans l'API concernant le nom
+  document.getElementById("details__section--name").innerHTML = // On récupère l'ID "details__section--name",
+    furniture.name;  // et on définit la syntaxe HTML situé dans l'API concernant le nom
   document.getElementById("details__section--description").innerHTML = // On récupère l'ID "details__section--description",
     furniture.description; // et on définit la syntaxe HTML situé dans l'API concernant la description
   document.getElementById("details__section--price").innerHTML = // On récupère l'ID "details__section--price",

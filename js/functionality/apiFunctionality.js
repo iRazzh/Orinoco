@@ -26,6 +26,10 @@ let getOneFurniture = function (idFurniture) {
       } else if (this.status === 500 || this.status === 404) {
         console.log("Admin : ERROR product not found");
         resolve(null);
+      } else if (idFurniture === "") {
+        console.log("Admin : ERROR id not found")
+        alert("Un souci avec l'identifiant du produit a été détecté. Vous allez être redirigé vers la page d'accueil")
+        document.location.href = "index.html";
       } else {
         console.log("Admin : ERROR connection API failed");
       }
